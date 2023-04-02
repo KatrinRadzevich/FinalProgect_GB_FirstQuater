@@ -9,12 +9,13 @@ string[] firstElement = GetLeftPartOfArray(leftPartOrArray);
 string[] secondElement = GetRightPartOfArray(leftPartOrArray);
 string[] thirdElement = GetLeftPartOfArray(rightPartOrArray);
 string[] fourthElement = GetRightPartOfArray(rightPartOrArray);
+// Полученные массивы конвертим в строки
+string first = string.Concat(firstElement);
+string second = string.Concat(secondElement);
+string third = string.Concat(thirdElement);
+string fourth = string.Concat(fourthElement);
 
 Console.WriteLine("[" + String.Join(", ", array) + "]");
-Console.WriteLine("[" + String.Join(", ", firstElement) + "]");
-Console.WriteLine("[" + String.Join(", ", secondElement) + "]");
-Console.WriteLine("[" + String.Join(", ", thirdElement) + "]");
-Console.WriteLine("[" + String.Join(", ", fourthElement) + "]");
 // Метод заполнения массива от пользователя
 string[] FillArray(string[] someArray)
 {
