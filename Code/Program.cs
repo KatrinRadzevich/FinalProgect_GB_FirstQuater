@@ -14,8 +14,11 @@ string first = string.Concat(firstElement);
 string second = string.Concat(secondElement);
 string third = string.Concat(thirdElement);
 string fourth = string.Concat(fourthElement);
+// Заполнение результирующего массива и печать 
+string[] resultArray;
+resultArray = GetResultArray(first, second, third, fourth);
+Console.Write("[" + String.Join(", ", array) + "] -> [" + String.Join(",  ", resultArray) + "]");
 
-Console.WriteLine("[" + String.Join(", ", array) + "]");
 // Метод заполнения массива от пользователя
 string[] FillArray(string[] someArray)
 {
@@ -38,4 +41,39 @@ string[] GetRightPartOfArray(string[] inArray)
     int mid = (inArray.Length + 1) / 2;
     string[] someArray = inArray[mid..];
     return someArray;
+}
+// Метод на нахождение размерности результирующего массива и его заполнения
+string[] GetResultArray(string first, string second, string third, string fourth)
+{
+    int size = 0;
+    if (first.Length <= 3) size++;
+    if (second.Length <= 3) size++;
+    if (third.Length <= 3) size++;
+    if (fourth.Length <= 3) size++;
+    string[] resultArray = new string[size];
+    int i = 0;
+    while (i < resultArray.Length)
+    {
+        if (first.Length <= 3)
+        {
+            resultArray[i] = first;
+            i++;
+        }
+        if (second.Length <= 3)
+        {
+            resultArray[i] = second;
+            i++;
+        }
+        if (third.Length <= 3)
+        {
+            resultArray[i] = third;
+            i++;
+        }
+        if (fourth.Length <= 3)
+        {
+            resultArray[i] = fourth;
+            i++;
+        }
+    }
+    return resultArray;
 }
